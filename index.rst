@@ -10,7 +10,7 @@ Module-manual's documentation!
    :maxdepth: 2
    :caption: Table of Contents
    :name: mastertoc
-
+   
    openpyxl
    shutil
 
