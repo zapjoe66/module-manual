@@ -8,7 +8,7 @@ Module-manual's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Table of Contents
+   :caption: All my modules
    :name: mastertoc
    
    openpyxl
