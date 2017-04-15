@@ -1,3 +1,4 @@
+.. default-role:: code
 Openpyxl
 ========
 Opening Excel Documents with OpenPyXL
