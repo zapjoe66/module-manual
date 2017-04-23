@@ -1,4 +1,4 @@
 .. toctree::
    :maxdepth: 2
 
-   `Kasiski examination`
+   Kasiski_examination
