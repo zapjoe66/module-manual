@@ -13,5 +13,5 @@ Module-manual's documentation!
    
    openpyxl
    shutil
-
+   cryptography
 
