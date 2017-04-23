@@ -46,8 +46,8 @@ You can slice Worksheet objects to get all the Cell objects in a row, column, or
 >>> sheet['A1':'C3']
 ((<Cell '工作表1'.A1>, <Cell '工作表1'.B1>, <Cell '工作表1'.C1>), (<Cell '工作表1'.A2>, <Cell '工作表1'.B2>, <Cell '工作表1'.C2>), (<Cell '工作表1'.A3>, <Cell '工作表1'.B3>, <Cell '工作表1'.C3>))
 >>> for rowOfCellObjects in sheet['A1':'C3']:  # loop over every rows
-        for cellObj in rowOfCellObjects:  #loop every cells in one row
-        print(cellObj.coordinate, cellObj.value)
+...     for cellObj in rowOfCellObjects:  #loop every cells in one row
+...         print(cellObj.coordinate, cellObj.value)
 >>> tuple(sheet.columns) 
 ((<Cell '工作表1'.A1>, <Cell '工作表1'.A2>, <Cell '工作表1'.A3>), (<Cell '工作表1'.B1>, <Cell '工作表1'.B2>, <Cell '工作表1'.B3>), (<Cell '工作表1'.C1>, <Cell '工作表1'.C2>, <Cell '工作表1'.C3>))
 >>> tuple(sheet.rows)
@@ -93,9 +93,29 @@ Setting the Font Style of Cells
 >>> from openpyxl.styles import Font
 >>> wb = openpyxl.Workbook()
 >>> sheet = wb.get_sheet_by_name('Sheet')
-❶ >>> italic24Font = Font(size=24, italic=True)
-        
-        
+>>> italic24Font = Font(size=24, italic=True)   
+>>> sheet['A1'].font = italic24Font #A cell’s style can be set by assigning the Font object to the font attribute.
+
+Font Objects
+------------
+Keyword Arguments for Font
+
++-----------------+------------------+--------------------------------------------------------------+
+|Keyword argument |data type         |descrption                                                    |
++=================+==================+==============================================================+
+|name             |String            |The font name, such as 'Calibri' or 'Times New Roman'         |
++-----------------+------------------+--------------------------------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
         
         
         
