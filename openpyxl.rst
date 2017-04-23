@@ -53,12 +53,47 @@ You can slice Worksheet objects to get all the Cell objects in a row, column, or
 >>> tuple(sheet.rows)
 ((<Cell '工作表1'.A1>, <Cell '工作表1'.B1>, <Cell '工作表1'.C1>), (<Cell '工作表1'.A2>, <Cell '工作表1'.B2>, <Cell '工作表1'.C2>), (<Cell '工作表1'.A3>, <Cell '工作表1'.B3>, <Cell '工作表1'.C3>))
 
+Creating and Saving Excel Documents
+-----------------------------------
 
-        
-        
-        
-        
-        
+>>> sheet.title = 'Spam Bacon Eggs Sheet'  #change the sheet's title to 'Spam Bacon Eggs Sheet'
+>>> wb.save('example_copy.xlsx') # save a workbook
+
+Creating and Removing Sheets
+----------------------------
+
+>>> wb = openpyxl.Workbook()   #create a new empty workbook
+>>> wb.get_sheet_names()
+['Sheet']
+>>> wb.create_sheet()  #The create_sheet() method returns a new Worksheet object named SheetX, which by default is set to be the last sheet in the workbook. Optionally, the index and name of the new sheet can be specified with the index and title keyword arguments.
+<Worksheet "Sheet1">
+>>> wb.get_sheet_names()
+['Sheet', 'Sheet1']
+>>> wb.create_sheet(index=0, title='First Sheet')
+<Worksheet "First Sheet">
+>>> wb.get_sheet_names()
+['First Sheet', 'Sheet', 'Sheet1']
+>>> wb.create_sheet(index=2, title='Middle Sheet')
+<Worksheet "Middle Sheet">
+>>> wb.get_sheet_names()
+['First Sheet', 'Sheet', 'Middle Sheet', 'Sheet1']
+>>> wb.remove_sheet(wb.get_sheet_by_name('Middle Sheet'))
+>>> wb.remove_sheet(wb.get_sheet_by_name('Sheet1'))
+>>> wb.get_sheet_names()
+['First Sheet', 'Sheet']        
+
+Writing Values to Cells
+-----------------------
+>>> sheet['A1'] = 'Hello world!'  #write value into A1
+>>> sheet['A1'].value
+'Hello world!'
+
+Setting the Font Style of Cells
+-------------------------------
+>>> from openpyxl.styles import Font
+>>> wb = openpyxl.Workbook()
+>>> sheet = wb.get_sheet_by_name('Sheet')
+❶ >>> italic24Font = Font(size=24, italic=True)
         
         
         
