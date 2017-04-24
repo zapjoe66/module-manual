@@ -28,7 +28,9 @@ Getting Cells from the Sheets
 >>> sheet['A1'].column   #get the column of the cell
 >>> sheet['A1'].coordinate   #get the coordinate of the cell
 'A1'
->>> sheet.cell(row=1, column=2)  #Specifying a column by letter can be tricky to program, especially because after column Z, the columns start by using two letters: AA, AB, AC, and so on. As an alternative, you can also get a cell using the sheet’s cell() method and passing integers for its row and column keyword arguments. The first row or column integer is 1, not 0. 
+>>> sheet.cell(row=1, column=2)  
+
+Specifying a column by letter can be tricky to program, especially because after column Z, the columns start by using two letters: AA, AB, AC, and so on. As an alternative, you can also get a cell using the sheet’s cell() method and passing integers for its row and column keyword arguments. The first row or column integer is 1, not 0. 
 <Cell Sheet1.B1>
 
 Converting Between Column Letters and Numbers
@@ -65,8 +67,11 @@ Creating and Removing Sheets
 >>> wb = openpyxl.Workbook()   #create a new empty workbook
 >>> wb.get_sheet_names()
 ['Sheet']
->>> wb.create_sheet()  #The create_sheet() method returns a new Worksheet object named SheetX, which by default is set to be the last sheet in the workbook. Optionally, the index and name of the new sheet can be specified with the index and title keyword arguments.
+>>> wb.create_sheet()  
 <Worksheet "Sheet1">
+
+The create_sheet() method returns a new Worksheet object named SheetX, which by default is set to be the last sheet in the workbook. Optionally, the index and name of the new sheet can be specified with the index and title keyword arguments.
+ 
 >>> wb.get_sheet_names()
 ['Sheet', 'Sheet1']
 >>> wb.create_sheet(index=0, title='First Sheet')
