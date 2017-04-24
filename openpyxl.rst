@@ -100,6 +100,9 @@ Setting the Font Style of Cells
 >>> sheet = wb.get_sheet_by_name('Sheet')
 >>> italic24Font = Font(size=24, italic=True)   
 >>> sheet['A1'].font = italic24Font #A cell’s style can be set by assigning the Font object to the font attribute.
+>>> fontObj1 = Font(name='Times New Roman', bold=True)
+>>> sheet['A1'].font = fontObj1
+>>> sheet['A1'] = 'Bold Times New Roman'
 
 Font Objects
 ------------
@@ -116,6 +119,16 @@ Keyword Arguments for Font
 +------------------+-----------+-------------------------------------------------------+
 | italic           | boolean   | True, for italic font                                 |
 +------------------+-----------+-------------------------------------------------------+
+
+Formulas
+--------
+
+>>> sheet['B9'] = '=SUM(B1:B8)'
+
+This will store =SUM(B1:B8) as the value in cell B9. This sets the B9 cell to a formula that calculates the sum of values in cells B1 to B8. 
+
+Setting Row Height and Column Width
+-----------------------------------
 
 
 
